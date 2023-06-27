@@ -103,7 +103,7 @@
             <form action="{{ route('pekat.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <select name="kategori_laporan" class="form-control">
+                    <select name="kategori_laporan" class="form-control" required>
                         <option value="">Pilih Kategori Laporan</option>
                         <option value="Keamanan & Kriminalitas">Keamanan & Kriminalitas</option>
                         <option value="Lingkungan & Kebencanaan">Lingkungan & Kebencanaan</option>
@@ -119,13 +119,13 @@
                 </div>
                 <div class="form-group">
                     <input type="text" name="judul_laporan" placeholder="Masukkan Judul Laporan" class="form-control"
-                        rows="4" value="{{ old('judul_laporan') }}">
+                        rows="4" value="{{ old('judul_laporan') }}" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="isi_laporan" placeholder="Masukkan Isi Laporan" class="form-control" rows="4">{{ old('isi_laporan') }}</textarea>
+                    <textarea name="isi_laporan" placeholder="Masukkan Isi Laporan" class="form-control" rows="4" required>{{ old('isi_laporan') }} </textarea>
                 </div>
                 <div class="form-group">
-                    <input type="file" name="foto_laporan" class="form-control">
+                    <input type="file" name="foto_laporan" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-custom mt-2">Kirim</button>
             </form>
