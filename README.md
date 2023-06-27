@@ -21,6 +21,25 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Installation Instructions
+1. Install Composer:
+   - Download and install Composer from the official website: [Composer](https://getcomposer.org/download/).
+   - Follow the installation instructions provided for your operating system.
+
+2. Install XAMPP (or any other suitable local development environment):
+   - Download XAMPP from the official website: [XAMPP](https://www.apachefriends.org/download.html).
+   - Choose the appropriate version for your operating system and download the installer.
+   - Run the installer and follow the installation wizard to complete the installation.
+
+3. Run Composer:
+   - Write on the terminal: Composer install
+
+4. Copy .env files:
+   - Write on the terminal: cp .env.example .env
+
+5. Generate new key:
+   - Write on the terminal: php artisan generate:key
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
