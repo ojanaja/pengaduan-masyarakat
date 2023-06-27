@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('user.landing');
+        return view('User.landing');
     }
 
     public function login(Request $request)
@@ -48,7 +48,7 @@ class UserController extends Controller
 
     public function formRegister()
     {
-        return view('user.register');
+        return view('User.register');
     }
 
     public function register(Request $request)
@@ -146,7 +146,7 @@ class UserController extends Controller
                 ->orderBy('tgl_pengaduan', 'desc')
                 ->get();
 
-            return view('user.laporan', ['pengaduan' => $pengaduan, 'hitung' => $hitung, 'siapa' => $siapa]);
+            return view('User.laporan', ['pengaduan' => $pengaduan, 'hitung' => $hitung, 'siapa' => $siapa]);
         } else
             if ($siapa == 'selesai') {
                 $pengaduan = Pengaduan::where('nik', optional(Auth::guard('masyarakats')->user())->nik)
@@ -154,7 +154,7 @@ class UserController extends Controller
                     ->orderBy('tgl_pengaduan', 'desc')
                     ->get();
 
-                return view('user.laporan', ['pengaduan' => $pengaduan, 'hitung' => $hitung, 'siapa' => $siapa]);
+                return view('User.laporan', ['pengaduan' => $pengaduan, 'hitung' => $hitung, 'siapa' => $siapa]);
             }
     }
 
@@ -162,13 +162,13 @@ class UserController extends Controller
     {
         $pengaduan = Pengaduan::findOrFail($id_pengaduan);
 
-        $pdf = \PDF::loadView('user.cetak-individu', ['pengaduan' => $pengaduan]);
+        $pdf = \PDF::loadView('User.cetak-individu', ['pengaduan' => $pengaduan]);
         return $pdf->download('laporan-pengaduan-individu.pdf');
     }
 
     public function formUpdate()
     {
-        return view('user.lupaPassword');
+        return view('User.lupaPassword');
     }
 
     public function update(Request $request)

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pengaduan;
@@ -12,13 +12,13 @@ class PengaduanController extends Controller
     {
         $pengaduan = Pengaduan::orderBy('tgl_pengaduan', 'desc')->get();
 
-        return view('Admin.Pengaduan.index', ['pengaduan' => $pengaduan]);
+        return view('admin.Pengaduan.index', ['pengaduan' => $pengaduan]);
     }
 
     public function show($id_pengaduan)
     {
         $pengaduan = Pengaduan::where('id_pengaduan', $id_pengaduan)->first();
 
-        return view('Admin.Pengaduan.show', ['pengaduan' => $pengaduan]);
+        return view('admin.Pengaduan.show', ['pengaduan' => $pengaduan]);
     }
 }
