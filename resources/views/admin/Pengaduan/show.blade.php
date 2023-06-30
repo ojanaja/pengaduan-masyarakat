@@ -19,13 +19,6 @@
         .text-grey:hover {
             color: #6c757d;
         }
-
-        .btn-purple {
-            background: #6c757d;
-            border: #fff;
-            color: #fff;
-            width: 100%;
-        }
     </style>
 @endsection
 
@@ -83,11 +76,11 @@
                                 <td>:</td>
                                 <td>
                                     @if ($pengaduan->status == '0')
-                                        <a href="#" class="badge badge-danger">Pending</a>
+                                        <button class="btn btn-danger btn-sm">Pending</button>
                                     @elseif ($pengaduan->status == 'proses')
-                                        <a href="#" class="badge badge-warning text-white">Proses</a>
+                                        <button class="btn btn-warning text-white btn-sm">Proses</button>
                                     @else
-                                        <a href="#" class="badge badge-success">Selesai</a>
+                                        <button class="btn btn-success btn-sm">Selesai</button>
                                     @endif
                                 </td>
                             </tr>
@@ -109,7 +102,7 @@
                 <form action="{{ route('tanggapan.createOrUpdate') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id_pengaduan" value="{{ $pengaduan->id_pengaduan }}">
-                    <div class="form-group">
+                    <div class="form-group ml-3 mr-3">
                         <label for="status">Status</label>
                         <div class="input-group mb-3">
                             <select name="status" id="status" class="custom-select">
@@ -129,13 +122,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ml-3 mr-3">
                         <label for="tanggapan">Tanggapan</label>
                         <textarea name="tanggapan" id="tanggapan" rows="4" class="form-control" placeholder="Belum ada tanggapan"
                             required>{{ $tanggapan->tanggapan ?? '' }}</textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-purple">KIRIM</button>
+                    <button type="submit" class="btn btn-purple ml-3 mr-3" style="width: 96%">KIRIM</button>
                 </form>
                 @if (Session::has('status'))
                     <div class="alert alert-success mt-2">

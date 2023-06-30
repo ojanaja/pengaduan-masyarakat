@@ -26,7 +26,7 @@
                             <input type="text" name="to" id="form-control" placeholder="Tanggal Akhir"
                                 onfocusin="(this.type='date')" onfocusout="this.type='text'">
                         </div>
-                        <button type="submit" class="btn btn-purple" style="width: 25%">Cari Laporan</button>
+                        <button type="submit" class="btn btn-purple">Cari Laporan</button>
                     </form>
                 </div>
             </div>

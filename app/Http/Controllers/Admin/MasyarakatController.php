@@ -12,13 +12,17 @@ class MasyarakatController extends Controller
     {
         $masyarakat = Masyarakat::all();
 
-        return view('Admin.Masyarakat.index', ['masyarakat' => $masyarakat]);
+        return view('admin.Masyarakat.index', ['masyarakat' => $masyarakat]);
     }
 
     public function show($nik)
     {
-        $masyarakat = Masyarakat::where('nik', $nik)->first();
+        $masyarakat = Masyarakat::where('nik', $nik)->FirstorFail();
 
-        return view('Admin.Masyarakat.show', ['masyarakat' => $masyarakat]);
+        if (!$masyarakat) {
+            abort(404);
+        }
+
+        return view('admin.Masyarakat.show', ['masyarakat' => $masyarakat]);
     }
 }

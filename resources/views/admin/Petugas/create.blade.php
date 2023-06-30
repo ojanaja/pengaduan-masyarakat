@@ -58,7 +58,7 @@
                             <label for="level">Level</label>
                             <div class="input-group mt-3">
                                 <select name="level" id="level" class="custom-select">
-                                    <option value="petugas" selected>Pilih Level (Default: Petugas)</option>
+                                    <option selected value="petugas">Pilih Level (Default: Petugas)</option>
                                     <option value="admin">Admin</option>
                                     <option value="petugas">Petugas</option>
                                 </select>

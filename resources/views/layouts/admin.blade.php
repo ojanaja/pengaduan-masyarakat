@@ -76,15 +76,12 @@
                     <div class="ml-2">@yield('header')</div>
                     <div class="collapse navbar-collapse ml-auto">
                         <span class="navbar-nav text centre ml-auto" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" style="cursor: pointer;">
+                            aria-expanded="false">
                             {{ Auth::guard('admins')->user()->nama_petugas }}
                         </span>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdownMenu">
-                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST">
-                                @csrf
-                                <button class="dropdown-item" type="submit">Logout</button>
-                            </form>
-                        </div>
+                        <a class="btn btn-purple ml-2 btn-sm" href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
+                            Out</a>
                     </div>
                 </div>
             </nav>

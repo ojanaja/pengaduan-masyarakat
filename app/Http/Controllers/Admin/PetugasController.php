@@ -31,7 +31,7 @@ class PetugasController extends Controller
             'username' => ['required', 'string', 'unique:petugas'],
             'password' => ['required', 'string', 'min:6'],
             'no_telp' => ['required'],
-            'level' => ['required', 'in:admin.petugas'],
+            'level' => ['required', 'in:admin,petugas'],
         ]);
 
         if ($validate->fails()) {

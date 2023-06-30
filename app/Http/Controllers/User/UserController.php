@@ -67,6 +67,12 @@ class UserController extends Controller
             return redirect()->back()->with(['pesan' => $validate->errors()]);
         }
 
+        $nik = Masyarakat::where('nik', $request->nik)->first();
+
+        if ($nik) {
+            return redirect()->back()->with(['pesan' => 'NIK sudah terdaftar']);
+        }
+
         $username = Masyarakat::where('username', $request->username)->first();
 
         if ($username) {

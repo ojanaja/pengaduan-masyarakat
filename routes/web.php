@@ -80,6 +80,9 @@ Route::prefix('admin')->group(function () {
         // Tanggapan
         Route::post('tanggapan\createOrUpdate', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
 
+        // Masyarakat
+        Route::resource('masyarakat', MasyarakatController::class);
+
         // Logout
         Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
     });

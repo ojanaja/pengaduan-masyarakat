@@ -13,7 +13,7 @@
 </head>
 
 @section('content')
-    <table id="pengaduanTable" class="table">
+    <table id="pengaduanTable" class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
