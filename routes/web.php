@@ -68,6 +68,9 @@ Route::prefix('admin')->group(function () {
         Route::post('getLaporan', [LaporanController::class, 'getLaporan'])->name('laporan.getLaporan');
         Route::get('/laporan/cetak/{from}/{to}', [LaporanController::class, 'cetakLaporan'])->name('laporan.cetakLaporan');
         Route::get('laporan/cetak-individu/{id_pengaduan}', [LaporanController::class, 'cetakLaporanIndividu'])->name('laporan.cetakLaporanIndividu');
+
+        // Logout
+        Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
     });
 
     Route::middleware(['isPetugas'])->group(function () {

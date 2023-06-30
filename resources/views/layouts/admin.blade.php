@@ -79,9 +79,10 @@
                             aria-expanded="false">
                             {{ Auth::guard('admins')->user()->nama_petugas }}
                         </span>
-                        <a class="btn btn-purple ml-2 btn-sm" href="#"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign
-                            Out</a>
+                        <form id="logout-form" action="{{ route('admin.logout') }}" class="mt-3" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-purple ml-3 btn-sm">Sign Out</button>
+                        </form>
                     </div>
                 </div>
             </nav>
